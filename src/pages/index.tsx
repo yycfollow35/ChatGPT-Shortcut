@@ -12,6 +12,7 @@ import Translate, { translate } from '@docusaurus/Translate';
 import { useHistory, useLocation } from '@docusaurus/router';
 import { usePluralForm } from '@docusaurus/theme-common';
 import { debounce } from 'lodash';
+import Image from '@theme/IdealImage';
 
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
@@ -127,11 +128,14 @@ function ShowcaseHeader() {
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">ChatGPT Shortcut</Heading>
       <p>{DESCRIPTION}</p>
-      <Link className="button button--primary" to={SUBMIT_URL}>
+      <div style={{marginBottom:'30px'}}>
+      {/* <Link className="button button--primary" to={SUBMIT_URL}> */}
         <Translate id="showcase.header.button">
-          🙏 请添加你的提示词
+          👇 免费获取更多资料
         </Translate>
-      </Link>
+      {/* </Link> */}
+      </div>
+      <Image style={{width:'214px',height:'290px'}} img={'img/weixin.jpeg'} alt={'weixin'} />
     </section>
   );
 }
@@ -165,7 +169,7 @@ function ShowcaseFilters() {
           </Heading>
           <span>{siteCountPlural(filteredUsers.length)}</span>
         </div>
-        <Link style={{
+        {/* <Link style={{
           display: 'inline-block',
           backgroundColor: '#18816a',
           color: 'var(--site-color-favorite-background)',
@@ -177,7 +181,7 @@ function ShowcaseFilters() {
           marginRight: '8px',
         }} to="/cn" title="将提示词的默认语言切换为中文。">
           CN
-        </Link>
+        </Link> */}
         <ShowcaseFilterToggle />
       </div>
       <ul className={clsx('clean-list', styles.checkboxList)}>
@@ -385,6 +389,7 @@ function ShowcaseCards() {
                   styles.showcaseList,
                 )}>
                 {favoriteUsers.map((user) => (
+
                   <ShowcaseCard key={user.title} user={user} />
                 ))}
               </ul>

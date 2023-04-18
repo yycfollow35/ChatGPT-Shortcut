@@ -33,6 +33,7 @@ import ShowcaseFilterToggle, {
 } from './_components/ShowcaseFilterToggle';
 import ShowcaseCard from './_components/ShowcaseCard/cn';
 import ShowcaseTooltip from './_components/ShowcaseTooltip';
+import Image from '@theme/IdealImage';
 
 import styles from './styles.module.css';
 
@@ -127,11 +128,14 @@ function ShowcaseHeader() {
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">ChatGPT Shortcut</Heading>
       <p>{DESCRIPTION}</p>
-      <Link className="button button--primary" to={SUBMIT_URL}>
+      <div style={{marginBottom:'30px'}}>
+      {/* <Link className="button button--primary" to={SUBMIT_URL}> */}
         <Translate id="showcase.header.button">
-        🙏 请添加你的提示词
+          👇 免费获取更多资料
         </Translate>
-      </Link>
+      {/* </Link> */}
+      </div>
+      <Image style={{width:'214px',height:'290px'}} img={'img/weixin.jpeg'} alt={'weixin'} />
     </section>
   );
 }
